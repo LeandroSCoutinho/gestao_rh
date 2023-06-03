@@ -2,3 +2,6 @@
 *.sqlite3
 venv
 *.pyc
+gestao_rh/ __pycache__/
+
+
