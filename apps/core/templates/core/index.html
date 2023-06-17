@@ -6,10 +6,21 @@
       One of three columns
     </div>
     <div class="col-sm">
-      One of three columns
+        {% if usuario.funcionario.empresa %}
+            <div class="alert alert-primary" role="alert">
+             Empresa: {{ usuario.funcionario.empresa.nome }}
+            </div>
+        {% endif %}
+        Olá, {{ usuario.funcionario.nome }}
     </div>
     <div class="col-sm">
-      <a href=" {% url 'logout' %}">Logout</a>
+      <a class="btn btn-outline-warning" href=" {% url 'logout' %}">Logout</a>
+
+        {% if usuario.funcionario.empresa %}
+            <a class="btn btn-outline-primary" href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar empresa</a>
+        {% else %}
+            <a class="btn btn-outline-primary" href="{% url 'create_empresa' %}">Criar empresa</a>
+        {% endif %}
     </div>
   </div>
 {% endblock %}
