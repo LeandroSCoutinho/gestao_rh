@@ -12,6 +12,7 @@
             </div>
         {% endif %}
         Olá, {{ usuario.funcionario.nome }}
+        <a href="{% url 'list_funcionarios' %}">Generenciar funcionarios</a>
     </div>
     <div class="col-sm">
       <a class="btn btn-outline-warning" href=" {% url 'logout' %}">Logout</a>
