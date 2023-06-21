@@ -9,8 +9,11 @@
       </ol>
     </nav>
     {% for funcionario in object_list%}
+        <hr>
         {{ funcionario }}
-        <a class="btn btn-primary" href="{% url 'edit_funcionarios' funcionario.id  %}">Editar</a><br>
-        <a class="btn btn-danger" href="{% url 'delete_funcionarios' funcionario.id  %}">Excluir</a><br>
+        <a class="btn btn-primary" href="{% url 'edit_funcionario' funcionario.id  %}">Editar</a>
+        <a class="btn btn-danger" href="{% url 'delete_funcionario' funcionario.id  %}">Excluir</a><br>
     {% endfor %}
+    <hr>
+    <a class="btn btn-info" href="{% url 'create_funcionario' %}">+ Novo</a><br>
 {% endblock %}
