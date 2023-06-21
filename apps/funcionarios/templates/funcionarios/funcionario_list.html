@@ -9,6 +9,8 @@
       </ol>
     </nav>
     {% for funcionario in object_list%}
-        {{ funcionario }}<br>
+        {{ funcionario }}
+        <a class="btn btn-primary" href="{% url 'edit_funcionarios' funcionario.id  %}">Editar</a><br>
+        <a class="btn btn-danger" href="{% url 'delete_funcionarios' funcionario.id  %}">Excluir</a><br>
     {% endfor %}
 {% endblock %}

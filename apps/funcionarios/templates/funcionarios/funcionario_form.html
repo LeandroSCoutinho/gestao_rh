@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Editar de Funcionário </h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'list_funcionarios' %}">Lista de Funcionário</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Editar de Funcionário</li>
+      </ol>
+    </nav>
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form }}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+{% endblock %}
