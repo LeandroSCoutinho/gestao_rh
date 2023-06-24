@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Lista de Departamento</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Lista de Departamento</li>
+      </ol>
+    </nav>
+    {% for departamento in object_list%}
+        <hr>
+        {{ departamento }}
+        <a class="btn btn-primary" href="#">Editar</a>
+        <a class="btn btn-danger" href="#">Excluir</a><br>
+    {% endfor %}
+    <hr>
+    <a class="btn btn-info" href="#">+ Novo</a><br>
+{% endblock %}
