@@ -11,7 +11,7 @@
     {% for departamento in object_list%}
         <hr>
         {{ departamento }}
-        <a class="btn btn-primary" href="#">Editar</a>
+        <a class="btn btn-primary" href="{% url 'update_departamento' departamento.id %}">Editar</a>
         <a class="btn btn-danger" href="#">Excluir</a><br>
     {% endfor %}
     <hr>

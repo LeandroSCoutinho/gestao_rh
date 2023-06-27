@@ -1,7 +1,10 @@
 from django.contrib.auth.models import User
 from .models import Departamento
-from django.views.generic import ListView,CreateView
-
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView
+)
 
 class DepartamentoList(ListView):
     model = Departamento
@@ -18,3 +21,7 @@ class DepartamentoNovo(CreateView):
         departamento.empresa = self.request.user.funcionario.empresa
         departamento.save()
         return super(DepartamentoNovo, self).form_valid(form)
+
+class DepartamentoEdit(UpdateView):
+    model = Departamento
+    fields = ['nome']
