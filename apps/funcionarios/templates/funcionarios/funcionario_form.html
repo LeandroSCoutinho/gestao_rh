@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block main %}
     <h1>Editar de Funcionário </h1>
@@ -9,10 +10,11 @@
           <li class="breadcrumb-item active" aria-current="page">Editar de Funcionário</li>
       </ol>
     </nav>
+
     <form method="post">
         {% csrf_token %}
 
-        {{ form }}
+        {{ form | bootstrap }}
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
 {% endblock %}
