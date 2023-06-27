@@ -12,7 +12,7 @@
         <hr>
         {{ departamento }}
         <a class="btn btn-primary" href="{% url 'update_departamento' departamento.id %}">Editar</a>
-        <a class="btn btn-danger" href="#">Excluir</a><br>
+        <a class="btn btn-danger" href="{% url 'delete_departamento' departamento.id %}">Excluir</a><br>
     {% endfor %}
     <hr>
     <a class="btn btn-info" href="{% url 'create_departamento' %}">+ Novo</a><br>
